@@ -25,6 +25,8 @@ Cube::Cube(){
     greenFace = gface;
     redFace = rface;
     yellowFace = yface;
+    
+    setEdges();
 }
 
 void Cube::setEdges(){
@@ -64,3 +66,125 @@ void Cube::setEdges(){
     YO.first = yellowFace[1][0];
     YO.second = orangeFace[2][1];
 }
+
+/*vector<vector<Color>> &face3, vector<vector<Color>> &face4){
+    if(mainFace == whiteFace){
+        face1 = blueFace;
+        face2 = orangeFace;
+        face3 = greenFace;
+        face4 = redFace;
+    }
+    else if(mainFace == blueFace){
+        face1 = orangeFace;
+        face2 = whiteFace;
+        face3 = redFace;
+        face4 = yellowFace;
+    }
+    else if(mainFace == orangeFace){
+        face1 = greenFace;
+        face2 = whiteFace;
+        face3 = blueFace;
+        face4 = yellowFace;
+    }
+    else if(mainFace == greenFace){
+        face1 = redFace;
+        face2 = whiteFace;
+        face3 = orangeFace;
+        face4 = yellowFace;
+    }
+    else if(mainFace == redFace){
+        face1 = blueFace;
+        face2 = whiteFace;
+        face3 = greenFace;
+        face4 = yellowFace;
+    }
+    else if(mainFace == yellowFace){
+        face1 = blueFace;
+        face2 = redFace;
+        face3 = greenFace;
+        face4 = orangeFace;
+    }
+}*/
+
+void Cube::rotateFaceClockwise(vector<vector<Color>> &face){
+    vector<Color> v1 (3);
+    vector<Color> v2 (3);
+    vector<Color> v3 (3);
+    vector<Color> v4 (3);
+    if(face == whiteFace){
+        v1[0] = blueFace[0][0];
+        v1[1] = blueFace[0][1];
+        v1[2] = blueFace[0][2];
+        
+        v2[0] = orangeFace[0][0];
+        v2[1] = orangeFace[0][1];
+        v2[2] = orangeFace[0][2];
+        
+        v3[0] = greenFace[0][0];
+        v3[1] = greenFace[0][1];
+        v3[2] = greenFace[0][2];
+        
+        v4[0] = redFace[0][0];
+        v4[1] = redFace[0][1];
+        v4[2] = redFace[0][2];
+
+        blueFace[0][0] = v2[0];
+        blueFace[0][1] = v2[1];
+        blueFace[0][2] = v2[2];
+        
+        orangeFace[0][0] = v3[0];
+        orangeFace[0][1] = v3[1];
+        orangeFace[0][2] = v3[2];
+        
+        greenFace[0][0] = v4[0];
+        greenFace[0][1] = v4[1];
+        greenFace[0][2] = v4[2];
+        
+        redFace[0][0] = v1[0];
+        redFace[0][1] = v1[1];
+        redFace[0][2] = v1[2];
+    }
+    else if(face == blueFace){
+        v1[0] = whiteFace[2][0];
+        v1[1] = whiteFace[2][1];
+        v1[2] = whiteFace[2][2];
+        
+        v2[0] = orangeFace[0][0];
+        v2[1] = orangeFace[1][0];
+        v2[2] = orangeFace[2][0];
+        
+        v3[0] = yellowFace[2][0];
+        v3[1] = yellowFace[2][1];
+        v3[2] = yellowFace[2][2];
+        
+        v4[0] = redFace[0][2];
+        v4[1] = redFace[1][2];
+        v4[2] = redFace[2][2];
+        
+        whiteFace[2][0] = v4[0];
+        whiteFace[2][1] = v4[1];
+        whiteFace[2][2] = v4[2];
+        
+        orangeFace[0][0] = v1[0];
+        orangeFace[1][0] = v1[1];
+        orangeFace[2][0] = v1[2];
+        
+        yellowFace[2][0] = v2[0];
+        yellowFace[2][1] = v2[1];
+        yellowFace[2][2] = v2[2];
+        
+        redFace[0][2] = v3[0];
+        redFace[1][2] = v3[1];
+        redFace[2][2] = v3[2];
+    }
+}
+
+
+
+
+
+
+
+
+
+
