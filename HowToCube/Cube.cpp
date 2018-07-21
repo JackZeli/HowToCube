@@ -177,6 +177,139 @@ void Cube::rotateFaceClockwise(vector<vector<Color>> &face){
         redFace[1][2] = v3[1];
         redFace[2][2] = v3[2];
     }
+    else if(face == orangeFace){
+        v1[0] = whiteFace[0][2];
+        v1[1] = whiteFace[1][2];
+        v1[2] = whiteFace[2][2];
+        
+        v2[0] = greenFace[0][0];
+        v2[1] = greenFace[1][0];
+        v2[2] = greenFace[2][0];
+        
+        v3[0] = yellowFace[0][0];
+        v3[1] = yellowFace[1][0];
+        v3[2] = yellowFace[2][0];
+        
+        v4[0] = blueFace[0][2];
+        v4[1] = blueFace[1][2];
+        v4[2] = blueFace[2][2];
+        
+        whiteFace[0][2] = v4[0];
+        whiteFace[1][2] = v4[1];
+        whiteFace[2][2] = v4[2];
+        
+        greenFace[0][0] = v1[0];
+        greenFace[1][0] = v1[1];
+        greenFace[2][0] = v1[2];
+        
+        yellowFace[0][0] = v2[0];
+        yellowFace[1][0] = v2[1];
+        yellowFace[2][0] = v2[2];
+        
+        blueFace[0][2] = v3[0];
+        blueFace[1][2] = v3[1];
+        blueFace[2][2] = v3[2];
+    }
+    else if(face == greenFace){
+        v1[0] = whiteFace[0][0];
+        v1[1] = whiteFace[0][1];
+        v1[2] = whiteFace[0][2];
+        
+        v2[0] = redFace[0][0];
+        v2[1] = redFace[1][0];
+        v2[2] = redFace[2][0];
+        
+        v3[0] = yellowFace[0][0];
+        v3[1] = yellowFace[0][1];
+        v3[2] = yellowFace[0][2];
+        
+        v4[0] = orangeFace[0][2];
+        v4[1] = orangeFace[1][2];
+        v4[2] = orangeFace[2][2];
+        
+        whiteFace[0][0] = v4[0];
+        whiteFace[0][1] = v4[1];
+        whiteFace[0][2] = v4[2];
+        
+        redFace[0][0] = v1[0];
+        redFace[1][0] = v1[1];
+        redFace[2][0] = v1[2];
+        
+        yellowFace[0][0] = v2[0];
+        yellowFace[0][1] = v2[1];
+        yellowFace[0][2] = v2[2];
+        
+        orangeFace[0][2] = v3[0];
+        orangeFace[1][2] = v3[1];
+        orangeFace[2][2] = v3[2];
+    }
+    else if(face == redFace){
+        v1[0] = whiteFace[0][0];
+        v1[1] = whiteFace[1][0];
+        v1[2] = whiteFace[2][0];
+        
+        v2[0] = blueFace[0][0];
+        v2[1] = blueFace[1][0];
+        v2[2] = blueFace[2][0];
+        
+        v3[0] = yellowFace[0][2];
+        v3[1] = yellowFace[1][2];
+        v3[2] = yellowFace[2][2];
+        
+        v4[0] = greenFace[0][2];
+        v4[1] = greenFace[1][2];
+        v4[2] = greenFace[2][2];
+        
+        whiteFace[0][0] = v4[0];
+        whiteFace[1][0] = v4[1];
+        whiteFace[2][0] = v4[2];
+        
+        blueFace[0][0] = v1[0];
+        blueFace[1][0] = v1[1];
+        blueFace[2][0] = v1[2];
+        
+        yellowFace[0][2] = v2[0];
+        yellowFace[1][2] = v2[1];
+        yellowFace[2][2] = v2[2];
+        
+        greenFace[0][2] = v3[0];
+        greenFace[1][2] = v3[1];
+        greenFace[2][2] = v3[2];
+    }
+    else if(face == yellowFace){
+        v1[0] = blueFace[2][0];
+        v1[1] = blueFace[2][1];
+        v1[2] = blueFace[2][2];
+        
+        v2[0] = orangeFace[2][0];
+        v2[1] = orangeFace[2][1];
+        v2[2] = orangeFace[2][2];
+        
+        v3[0] = greenFace[2][0];
+        v3[1] = greenFace[2][1];
+        v3[2] = greenFace[2][2];
+        
+        v4[0] = redFace[2][0];
+        v4[1] = redFace[2][1];
+        v4[2] = redFace[2][2];
+        
+        blueFace[2][0] = v4[0];
+        blueFace[2][1] = v4[1];
+        blueFace[2][2] = v4[2];
+        
+        orangeFace[2][0] = v1[0];
+        orangeFace[2][1] = v1[1];
+        orangeFace[2][2] = v1[2];
+        
+        greenFace[2][0] = v2[0];
+        greenFace[2][1] = v2[1];
+        greenFace[2][2] = v2[2];
+
+        redFace[2][0] = v3[0];
+        redFace[2][1] = v3[1];
+        redFace[2][2] = v3[2];
+    }
+    
 }
 
 
