@@ -310,6 +310,38 @@ void Cube::rotateFaceClockwise(vector<vector<Color>> &face){
         redFace[2][2] = v3[2];
     }
     
+    v1[0] = face[0][0];
+    v1[1] = face[0][1];
+    v1[2] = face[0][2];
+    
+    v2[0] = face[0][2];
+    v2[1] = face[1][2];
+    v2[2] = face[2][2];
+    
+    v3[0] = face[2][2];
+    v3[1] = face[2][1];
+    v3[2] = face[2][0];
+    
+    v4[0] = face[2][0];
+    v4[1] = face[1][0];
+    v4[2] = face[0][0];
+    
+    face[0][0] = v4[0];
+    face[0][1] = v4[1];
+    face[0][2] = v4[2];
+    
+    face[0][2] = v1[0];
+    face[1][2] = v1[1];
+    face[2][2] = v1[2];
+    
+    face[2][2] = v2[0];
+    face[2][1] = v2[1];
+    face[2][0] = v2[2];
+    
+    face[2][0] = v3[0];
+    face[1][0] = v3[1];
+    face[0][0] = v3[2];
+    
 }
 
 
