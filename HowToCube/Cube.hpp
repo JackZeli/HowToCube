@@ -31,8 +31,8 @@ public:
     void setEdges(); //After a rotation, redefine all of the edges
     
     //Two rotation functions
-    void rotateFaceClockwise(std::vector<std::vector<Color>> &face);
-    void rotateFaceCounterClock(std::vector<std::vector<Color>> &face);
+    void rotateFace(std::vector<std::vector<Color>> &face, int dir);
+    //void rotateFaceCounterClock(std::vector<std::vector<Color>> &face);
     
     //Gets the other 4 faces needed
     /*void getFaces(std::vector<std::vector<Color>> mainFace, std::vector<std::vector<Color>> &face1, std::vector<std::vector<Color>> &face2, std::vector<std::vector<Color>> &face3, std::vector<std::vector<Color>> &face4);*/
