@@ -9,6 +9,7 @@
 #include "Cube.hpp"
 #include <vector>
 #include <string>
+#include <cstdlib>
 using namespace std;
 
 Cube::Cube(){
@@ -436,8 +437,33 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
         face[1][0] = v1[1];
         face[0][0] = v1[2];
     }
+    setEdges();
 }
 
+void Cube::shuffle(Cube &cube){
+    for(int i = 0; i < 50; ++i){
+        int num = rand() % 6;
+        int dir = rand() % 2;
+        if(num == 0){
+            rotateFace(cube.whiteFace, dir);
+        }
+        else if(num == 1){
+            rotateFace(cube.blueFace, dir);
+        }
+        else if(num == 2){
+            rotateFace(cube.orangeFace, dir);
+        }
+        else if(num == 3){
+            rotateFace(cube.greenFace, dir);
+        }
+        else if(num == 4){
+            rotateFace(cube.redFace, dir);
+        }
+        else if(num == 5){
+            rotateFace(cube.yellowFace, dir);
+        }
+    }
+}
 
 
 
