@@ -9,7 +9,8 @@
 #include "Cube.hpp"
 #include <vector>
 #include <string>
-#include <cstdlib>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 Cube::Cube(){
@@ -440,27 +441,28 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
     setEdges();
 }
 
-void Cube::shuffle(Cube &cube){
-    for(int i = 0; i < 50; ++i){
+void Cube::shuffle(){
+    srand(time(NULL));
+    for(int i = 0; i < 100; ++i){
         int num = rand() % 6;
         int dir = rand() % 2;
         if(num == 0){
-            rotateFace(cube.whiteFace, dir);
+            rotateFace(whiteFace, dir);
         }
         else if(num == 1){
-            rotateFace(cube.blueFace, dir);
+            rotateFace(blueFace, dir);
         }
         else if(num == 2){
-            rotateFace(cube.orangeFace, dir);
+            rotateFace(orangeFace, dir);
         }
         else if(num == 3){
-            rotateFace(cube.greenFace, dir);
+            rotateFace(greenFace, dir);
         }
         else if(num == 4){
-            rotateFace(cube.redFace, dir);
+            rotateFace(redFace, dir);
         }
         else if(num == 5){
-            rotateFace(cube.yellowFace, dir);
+            rotateFace(yellowFace, dir);
         }
     }
 }

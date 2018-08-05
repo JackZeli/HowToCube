@@ -12,10 +12,10 @@
 #include <stdio.h>
 #include <vector>
 #include <string>
-#include <cstdlib>
+#include <stdlib.h>
 
 //enum for color variables
-enum Color{white, red, blue, green, orange, yellow};
+enum Color{white, blue, orange, green, red, yellow};
 
 class Cube{
 public:
@@ -38,9 +38,9 @@ public:
     //Gets the other 4 faces needed
     /*void getFaces(std::vector<std::vector<Color>> mainFace, std::vector<std::vector<Color>> &face1, std::vector<std::vector<Color>> &face2, std::vector<std::vector<Color>> &face3, std::vector<std::vector<Color>> &face4);*/
     
-    void shuffle(Cube &cube);
+    void shuffle();
     
-private:
+//private:
     //12 pairs representing the 12 edge pieces of the cube
     std::pair<Color,Color> WB;
     std::pair<Color,Color> WR;

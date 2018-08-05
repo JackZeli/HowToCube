@@ -7,8 +7,12 @@
 //
 
 #include <iostream>
+#include "Cube.hpp"
+#include "firstLayer.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    Cube rubiks;
+    rubiks.shuffle();
+    crossTest(rubiks);
     return 0;
 }
