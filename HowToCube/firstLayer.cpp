@@ -30,3 +30,29 @@ void crossTest(Cube &cube){
     }
     return;
 }
+
+pair<Color, Color> locateEdge(Cube &cube, Color c1, Color c2){
+    vector<pair<Color,Color>> edges;
+    edges.push_back(cube.WB);
+    edges.push_back(cube.WO);
+    edges.push_back(cube.WG);
+    edges.push_back(cube.WR);
+    edges.push_back(cube.BO);
+    edges.push_back(cube.OG);
+    edges.push_back(cube.GR);
+    edges.push_back(cube.RB);
+    edges.push_back(cube.YB);
+    edges.push_back(cube.YO);
+    edges.push_back(cube.YG);
+    edges.push_back(cube.YR);
+    
+    pair<Color, Color> grn;
+    
+    for(int i = 0; i < edges.size(); ++i){
+        pair<Color, Color> curEdge = edges[i];
+        if((curEdge.first == c1 && curEdge.second == c2) || (curEdge.first == c2 && curEdge.second == c1)){
+            return curEdge;
+        }
+    }
+    return grn;
+}

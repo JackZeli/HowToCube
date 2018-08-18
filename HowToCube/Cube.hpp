@@ -54,7 +54,6 @@ public:
     std::pair<Color,Color> YR;
     std::pair<Color,Color> YO;
     std::pair<Color,Color> YG;
-
 };
 
 
