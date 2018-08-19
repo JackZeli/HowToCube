@@ -32,7 +32,7 @@ public:
     void setEdges(); //After a rotation, redefine all of the edges
     
     //Two rotation functions
-    void rotateFace(std::vector<std::vector<Color>> &face, int dir);
+    void rotateFace(Color face, int dir);
     //void rotateFaceCounterClock(std::vector<std::vector<Color>> &face);
     
     //Gets the other 4 faces needed

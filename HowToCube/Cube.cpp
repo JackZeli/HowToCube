@@ -69,12 +69,12 @@ void Cube::setEdges(){
     YO.second = orangeFace[2][1];
 }
 
-void Cube::rotateFace(vector<vector<Color>> &face, int dir){
+void Cube::rotateFace(Color face, int dir){
     vector<Color> v1 (3);
     vector<Color> v2 (3);
     vector<Color> v3 (3);
     vector<Color> v4 (3);
-    if(face == whiteFace){
+    if(face == white){
         v1[0] = blueFace[0][0];
         v1[1] = blueFace[0][1];
         v1[2] = blueFace[0][2];
@@ -127,7 +127,7 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
         }
         
     }
-    else if(face == blueFace){
+    else if(face == blue){
         v1[0] = whiteFace[2][0];
         v1[1] = whiteFace[2][1];
         v1[2] = whiteFace[2][2];
@@ -179,7 +179,7 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
             redFace[2][2] = v1[2];
         }
     }
-    else if(face == orangeFace){
+    else if(face == orange){
         v1[0] = whiteFace[0][2];
         v1[1] = whiteFace[1][2];
         v1[2] = whiteFace[2][2];
@@ -231,7 +231,7 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
             blueFace[2][2] = v1[2];
         }
     }
-    else if(face == greenFace){
+    else if(face == green){
         v1[0] = whiteFace[0][0];
         v1[1] = whiteFace[0][1];
         v1[2] = whiteFace[0][2];
@@ -283,7 +283,7 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
             orangeFace[2][2] = v1[2];
         }
     }
-    else if(face == redFace){
+    else if(face == red){
         v1[0] = whiteFace[0][0];
         v1[1] = whiteFace[1][0];
         v1[2] = whiteFace[2][0];
@@ -335,7 +335,7 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
             greenFace[2][2] = v1[2];
         }
     }
-    else if(face == yellowFace){
+    else if(face == yellow){
         v1[0] = blueFace[2][0];
         v1[1] = blueFace[2][1];
         v1[2] = blueFace[2][2];
@@ -387,57 +387,94 @@ void Cube::rotateFace(vector<vector<Color>> &face, int dir){
             orangeFace[2][2] = v3[2];
         }
     }
+    vector<vector<Color>> cubeFace;
+    if(face == white){
+        cubeFace = whiteFace;
+    }
+    else if(face == blue){
+        cubeFace = blueFace;
+    }
+    else if(face == red){
+        cubeFace = redFace;
+    }
+    else if(face == green){
+        cubeFace = greenFace;
+    }
+    else if(face == orange){
+        cubeFace = orangeFace;
+    }
+    else if(face == yellow){
+        cubeFace = yellowFace;
+    }
+    v1[0] = cubeFace[0][0];
+    v1[1] = cubeFace[0][1];
+    v1[2] = cubeFace[0][2];
     
-    v1[0] = face[0][0];
-    v1[1] = face[0][1];
-    v1[2] = face[0][2];
+    v2[0] = cubeFace[0][2];
+    v2[1] = cubeFace[1][2];
+    v2[2] = cubeFace[2][2];
     
-    v2[0] = face[0][2];
-    v2[1] = face[1][2];
-    v2[2] = face[2][2];
+    v3[0] = cubeFace[2][2];
+    v3[1] = cubeFace[2][1];
+    v3[2] = cubeFace[2][0];
     
-    v3[0] = face[2][2];
-    v3[1] = face[2][1];
-    v3[2] = face[2][0];
-    
-    v4[0] = face[2][0];
-    v4[1] = face[1][0];
-    v4[2] = face[0][0];
+    v4[0] = cubeFace[2][0];
+    v4[1] = cubeFace[1][0];
+    v4[2] = cubeFace[0][0];
     
     if(dir == 0){
-        face[0][0] = v4[0];
-        face[0][1] = v4[1];
-        face[0][2] = v4[2];
+        cubeFace[0][0] = v4[0];
+        cubeFace[0][1] = v4[1];
+        cubeFace[0][2] = v4[2];
         
-        face[0][2] = v1[0];
-        face[1][2] = v1[1];
-        face[2][2] = v1[2];
+        cubeFace[0][2] = v1[0];
+        cubeFace[1][2] = v1[1];
+        cubeFace[2][2] = v1[2];
         
-        face[2][2] = v2[0];
-        face[2][1] = v2[1];
-        face[2][0] = v2[2];
+        cubeFace[2][2] = v2[0];
+        cubeFace[2][1] = v2[1];
+        cubeFace[2][0] = v2[2];
         
-        face[2][0] = v3[0];
-        face[1][0] = v3[1];
-        face[0][0] = v3[2];
+        cubeFace[2][0] = v3[0];
+        cubeFace[1][0] = v3[1];
+        cubeFace[0][0] = v3[2];
     }
     else{
-        face[0][0] = v2[0];
-        face[0][1] = v2[1];
-        face[0][2] = v2[2];
+        cubeFace[0][0] = v2[0];
+        cubeFace[0][1] = v2[1];
+        cubeFace[0][2] = v2[2];
         
-        face[0][2] = v3[0];
-        face[1][2] = v3[1];
-        face[2][2] = v3[2];
+        cubeFace[0][2] = v3[0];
+        cubeFace[1][2] = v3[1];
+        cubeFace[2][2] = v3[2];
         
-        face[2][2] = v4[0];
-        face[2][1] = v4[1];
-        face[2][0] = v4[2];
+        cubeFace[2][2] = v4[0];
+        cubeFace[2][1] = v4[1];
+        cubeFace[2][0] = v4[2];
         
-        face[2][0] = v1[0];
-        face[1][0] = v1[1];
-        face[0][0] = v1[2];
+        cubeFace[2][0] = v1[0];
+        cubeFace[1][0] = v1[1];
+        cubeFace[0][0] = v1[2];
     }
+    if(face == white){
+        whiteFace = cubeFace;
+    }
+    else if(face == blue){
+        blueFace = cubeFace;
+    }
+    else if(face == red){
+        redFace = cubeFace;
+    }
+    else if(face == green){
+        greenFace = cubeFace;
+    }
+    else if(face == orange){
+        orangeFace = cubeFace;
+    }
+    else if(face == yellow){
+        yellowFace = cubeFace;
+    }
+    
     setEdges();
 }
 
@@ -447,22 +484,22 @@ void Cube::shuffle(){
         int num = rand() % 6;
         int dir = rand() % 2;
         if(num == 0){
-            rotateFace(whiteFace, dir);
+            rotateFace(white, dir);
         }
         else if(num == 1){
-            rotateFace(blueFace, dir);
+            rotateFace(blue, dir);
         }
         else if(num == 2){
-            rotateFace(orangeFace, dir);
+            rotateFace(orange, dir);
         }
         else if(num == 3){
-            rotateFace(greenFace, dir);
+            rotateFace(green, dir);
         }
         else if(num == 4){
-            rotateFace(redFace, dir);
+            rotateFace(red, dir);
         }
         else if(num == 5){
-            rotateFace(yellowFace, dir);
+            rotateFace(yellow, dir);
         }
     }
 }

@@ -56,3 +56,37 @@ pair<Color, Color> locateEdge(Cube &cube, Color c1, Color c2){
     }
     return grn;
 }
+
+Color getFace(pair<Color,Color> &edge){
+    
+       
+    return green;
+}
+
+void makeCross(Cube &cube){
+    int numWhite = 0;
+    if(cube.yellowFace[0][1] == white){
+        numWhite++;
+    }
+    if(cube.yellowFace[1][0] == white){
+        numWhite++;
+    }
+    if(cube.yellowFace[1][2] == white){
+        numWhite++;
+    }
+    if(cube.yellowFace[2][1] == white){
+        numWhite++;
+    }
+    
+    while(numWhite < 4){
+        pair<Color,Color> edge = locateEdge(cube, white, blue);
+        if(edge == cube.YB || edge == cube.YO || edge == cube.YG || edge == cube.YR){
+            if(edge.first != white){
+                
+            }
+        }
+    }
+    
+    
+    
+}

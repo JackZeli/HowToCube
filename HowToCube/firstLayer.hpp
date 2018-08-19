@@ -16,6 +16,8 @@
 
 std::pair<Color, Color> locateEdge(Cube &cube, Color c1, Color c2);
 
+Color getFace(std::pair<Color,Color>);
+
 void makeCross(Cube &cube);
 
 void crossTest(Cube &cube);
