@@ -20,6 +20,10 @@ Color getFace(std::pair<Color,Color>);
 
 void makeCross(Cube &cube);
 
+int getNum(Cube &cube);
+
 void crossTest(Cube &cube);
+
+void daisyTest(Cube &cube);
 
 #endif /* firstLayer_hpp */

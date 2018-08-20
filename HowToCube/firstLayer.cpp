@@ -28,6 +28,9 @@ void crossTest(Cube &cube){
     else if(cube.WR.first != white || cube.WR.second != red){
         cout << "Wrong piece in the White-Red edge, the piece that's there is " << colorTypes[cube.whiteFace[1][0]] << ", " << colorTypes[cube.redFace[0][1]] << endl;
     }
+    else{
+        cout << "Cross test passed!" << endl;
+    }
     return;
 }
 
@@ -63,7 +66,7 @@ Color getFace(pair<Color,Color> &edge){
     return green;
 }
 
-void makeCross(Cube &cube){
+int getNum(Cube &cube){
     int numWhite = 0;
     if(cube.yellowFace[0][1] == white){
         numWhite++;
@@ -77,16 +80,200 @@ void makeCross(Cube &cube){
     if(cube.yellowFace[2][1] == white){
         numWhite++;
     }
+    return numWhite;
+}
+
+void daisyTest(Cube &cube){
+    if(cube.yellowFace[0][1] == white && cube.yellowFace[1][0] == white && cube.yellowFace[1][2] == white && cube.yellowFace[2][1] == white){
+        cout << "Daisy test passed!" << endl;
+    }
+}
+
+void makeCross(Cube &cube){
+    int numWhite = getNum(cube);
+    bool b1 = false, b2 = false, b3 = false, b4 = false;
     
     while(numWhite < 4){
-        pair<Color,Color> edge = locateEdge(cube, white, blue);
+        pair<Color,Color> edge;
+        if(b1 == false){
+            edge = locateEdge(cube, white, blue);
+        }
+        else if(b2 == false){
+            edge = locateEdge(cube, white, orange);
+        }
+        else if(b3 == false){
+            edge = locateEdge(cube, white, green);
+        }
+        else if(b4 == false){
+            edge = locateEdge(cube, white, red);
+        }
+        
         if(edge == cube.YB || edge == cube.YO || edge == cube.YG || edge == cube.YR){
             if(edge.first != white){
-                
+                if(edge == cube.YB){
+                    cube.rotateFace(blue, 0);
+                }
+                else if(edge == cube.YO){
+                    cube.rotateFace(orange, 0);
+                }
+                else if(edge == cube.YG){
+                    cube.rotateFace(green, 0);
+                }
+                else{
+                    cube.rotateFace(red, 0);
+                }
+            }
+            else{
+                if(b1 == false){
+                    b1 = true;
+                }
+                else if(b2 == false){
+                    b2 = true;
+                }
+                else if(b3 == false){
+                    b3 = true;
+                }
+                else if(b4 == false){
+                    b4 = true;
+                }
             }
         }
+        else if(edge == cube.WB || edge == cube.WO || edge == cube.WG || edge == cube.WR){
+            if(edge == cube.WB){
+                if(cube.YB.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(blue, 0);
+                }
+            }
+            else if(edge == cube.WO){
+                if(cube.YO.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(orange, 0);
+                }
+            }
+            else if(edge == cube.WG){
+                if(cube.YG.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(green, 0);
+                }
+            }
+            else if(edge == cube.WR){
+                if(cube.YR.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(red, 0);
+                }
+            }
+        }
+        else if(edge == cube.BO){
+            if(edge.first == white){
+                if(cube.YO.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(orange, 1);
+                }
+            }
+            else{
+                if(cube.YB.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(blue, 0);
+                }
+            }
+        }
+        else if(edge == cube.OG){
+            if(edge.first == white){
+                if(cube.YG.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(green, 1);
+                }
+            }
+            else{
+                if(cube.YO.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(orange, 0);
+                }
+            }
+        }
+        else if(edge == cube.GR){
+            if(edge.first == white){
+                if(cube.YR.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(red, 1);
+                }
+            }
+            else{
+                if(cube.YG.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(green, 0);
+                }
+                numWhite = getNum(cube);
+            }
+        }
+        else if(edge == cube.RB){
+            if(edge.first == white){
+                if(cube.YB.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(blue, 1);
+                }
+            }
+            else{
+                if(cube.YR.first == white){
+                    cube.rotateFace(yellow, 0);
+                }
+                else{
+                    cube.rotateFace(red, 0);
+                }
+            }
+        }
+        numWhite = getNum(cube);
     }
     
+    pair<Color,Color> p1 = {white, blue};
+    while(cube.YB != p1){
+        cube.rotateFace(yellow, 0);
+    }
+    cube.rotateFace(blue, 0);
+    cube.rotateFace(blue, 0);
     
+    p1 = {white, orange};
+    while(cube.YO != p1){
+        cube.rotateFace(yellow, 0);
+    }
+    cube.rotateFace(orange, 0);
+    cube.rotateFace(orange, 0);
+    
+    p1 = {white, green};
+    while(cube.YG != p1){
+        cube.rotateFace(yellow, 0);
+    }
+    cube.rotateFace(green, 0);
+    cube.rotateFace(green, 0);
+    
+    p1 = {white, red};
+    while(cube.YR != p1){
+        cube.rotateFace(yellow, 0);
+    }
+    cube.rotateFace(red, 0);
+    cube.rotateFace(red, 0);
     
 }

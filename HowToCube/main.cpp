@@ -12,7 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     Cube rubiks;
-    rubiks.shuffle();
-    crossTest(rubiks);
+    for(int i = 0; i < 10; ++i){
+        rubiks.shuffle();
+        makeCross(rubiks);
+        //daisyTest(rubiks);
+        crossTest(rubiks);
+    }
     return 0;
 }

@@ -11,6 +11,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
 using namespace std;
 
 Cube::Cube(){
@@ -480,7 +481,7 @@ void Cube::rotateFace(Color face, int dir){
 
 void Cube::shuffle(){
     srand(time(NULL));
-    for(int i = 0; i < 100; ++i){
+    for(int i = 0; i < 10000; ++i){
         int num = rand() % 6;
         int dir = rand() % 2;
         if(num == 0){
@@ -502,6 +503,7 @@ void Cube::shuffle(){
             rotateFace(yellow, dir);
         }
     }
+    cout << "shuffle complete" << endl;
 }
 
 
