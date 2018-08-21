@@ -16,7 +16,9 @@
 
 std::pair<Color, Color> locateEdge(Cube &cube, Color c1, Color c2);
 
-Color getFace(std::pair<Color,Color>);
+Corner locateCorner(Cube &cube, Color c1, Color c2, Color c3);
+
+void makeFull(Cube &cube);
 
 void makeCross(Cube &cube);
 
@@ -25,5 +27,7 @@ int getNum(Cube &cube);
 void crossTest(Cube &cube);
 
 void daisyTest(Cube &cube);
+
+void fullTest(Cube &cube);
 
 #endif /* firstLayer_hpp */

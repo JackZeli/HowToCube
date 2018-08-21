@@ -30,6 +30,7 @@ Cube::Cube(){
     yellowFace = yface;
     
     setEdges();
+    setCorners();
 }
 
 void Cube::setEdges(){
@@ -511,6 +512,7 @@ void Cube::rotateFace(Color face, int dir){
     }
     
     setEdges();
+    setCorners();
 }
 
 void Cube::shuffle(){

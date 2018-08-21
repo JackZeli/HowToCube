@@ -60,10 +60,41 @@ pair<Color, Color> locateEdge(Cube &cube, Color c1, Color c2){
     return grn;
 }
 
-Color getFace(pair<Color,Color> &edge){
+Corner locateCorner(Cube &cube, Color c1, Color c2, Color c3){
+    vector<Corner> corners;
+    corners.push_back(cube.WBO);
+    corners.push_back(cube.WOG);
+    corners.push_back(cube.WGR);
+    corners.push_back(cube.WRB);
+    corners.push_back(cube.YBR);
+    corners.push_back(cube.YRG);
+    corners.push_back(cube.YGO);
+    corners.push_back(cube.YOB);
     
-       
-    return green;
+    for(int i = 0; i < corners.size(); ++i){
+        Corner curCorner = corners[i];
+        if(curCorner.first == c1 && curCorner.second == c2 && curCorner.third == c3){
+            return curCorner;
+        }
+        else if(curCorner.first == c1 && curCorner.second == c3 && curCorner.third == c2){
+            return curCorner;
+        }
+        else if(curCorner.first == c2 && curCorner.second == c1 && curCorner.third == c3){
+            return curCorner;
+        }
+        else if(curCorner.first == c2 && curCorner.second == c3 && curCorner.third == c1){
+            return curCorner;
+        }
+        else if(curCorner.first == c3 && curCorner.second == c1 && curCorner.third == c2){
+            return curCorner;
+        }
+        else if(curCorner.first == c3 && curCorner.second == c2 && curCorner.third == c1){
+            return curCorner;
+        }
+    }
+    
+    Corner corn;
+    return corn;
 }
 
 int getNum(Cube &cube){
