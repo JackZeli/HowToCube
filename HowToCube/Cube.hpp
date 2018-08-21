@@ -17,6 +17,12 @@
 //enum for color variables
 enum Color{white, blue, orange, green, red, yellow};
 
+struct Corner{
+    Color first;
+    Color second;
+    Color third;
+};
+
 class Cube{
 public:
     Cube(); //Constructor
@@ -30,6 +36,7 @@ public:
     std::vector<std::vector<Color>> yellowFace;
     
     void setEdges(); //After a rotation, redefine all of the edges
+    void setCorners(); //After a rotation, redefine all of the corners
     
     //Two rotation functions
     void rotateFace(Color face, int dir);
@@ -54,6 +61,15 @@ public:
     std::pair<Color,Color> YR;
     std::pair<Color,Color> YO;
     std::pair<Color,Color> YG;
+    
+    Corner WBO;
+    Corner WOG;
+    Corner WGR;
+    Corner WRB;
+    Corner YBR;
+    Corner YRG;
+    Corner YGO;
+    Corner YOB;
 };
 
 

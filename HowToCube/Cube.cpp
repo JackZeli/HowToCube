@@ -70,6 +70,40 @@ void Cube::setEdges(){
     YO.second = orangeFace[2][1];
 }
 
+void Cube::setCorners(){
+    WBO.first = whiteFace[2][2];
+    WBO.second = blueFace[0][2];
+    WBO.third = orangeFace[0][0];
+    
+    WOG.first = whiteFace[0][2];
+    WOG.second = orangeFace[0][2];
+    WOG.third = greenFace[0][0];
+    
+    WGR.first = whiteFace[0][0];
+    WGR.second = greenFace[0][2];
+    WGR.third = redFace[0][0];
+    
+    WRB.first = whiteFace[2][0];
+    WRB.second = redFace[0][2];
+    WRB.third = blueFace[0][0];
+    
+    YBR.first = yellowFace[2][2];
+    YBR.second = blueFace[2][0];
+    YBR.third = redFace[2][2];
+    
+    YRG.first = yellowFace[0][2];
+    YRG.second = redFace[2][0];
+    YRG.third = greenFace[2][2];
+    
+    YGO.first = yellowFace[0][0];
+    YGO.second = greenFace[2][0];
+    YGO.third = orangeFace[2][2];
+    
+    YOB.first = yellowFace[2][0];
+    YOB.second = orangeFace[2][0];
+    YOB.third = blueFace[2][2];
+}
+
 void Cube::rotateFace(Color face, int dir){
     vector<Color> v1 (3);
     vector<Color> v2 (3);

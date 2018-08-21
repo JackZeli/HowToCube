@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Cube.hpp"
 #include "firstLayer.hpp"
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     Cube rubiks;
@@ -17,6 +18,7 @@ int main(int argc, const char * argv[]) {
         makeCross(rubiks);
         //daisyTest(rubiks);
         crossTest(rubiks);
+        cout << endl;
     }
     return 0;
 }
