@@ -47,6 +47,9 @@ public:
     
     void shuffle();
     
+    void test();
+    void printCube();
+    
 //private:
     //12 pairs representing the 12 edge pieces of the cube
     std::pair<Color,Color> WB;

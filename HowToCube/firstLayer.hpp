@@ -22,7 +22,11 @@ void makeFull(Cube &cube);
 
 void makeCross(Cube &cube);
 
+bool cornerEq(const Corner &c1, const Corner &c2);
+
 int getNum(Cube &cube);
+
+int getPlace(Cube &cube);
 
 void crossTest(Cube &cube);
 

@@ -176,9 +176,9 @@ void Cube::rotateFace(Color face, int dir){
         v3[1] = yellowFace[2][1];
         v3[2] = yellowFace[2][2];
         
-        v4[0] = redFace[0][2];
+        v4[0] = redFace[2][2];
         v4[1] = redFace[1][2];
-        v4[2] = redFace[2][2];
+        v4[2] = redFace[0][2];
         
         if(dir == 0){ //clockwise
             whiteFace[2][0] = v4[0];
@@ -193,9 +193,9 @@ void Cube::rotateFace(Color face, int dir){
             yellowFace[2][1] = v2[1];
             yellowFace[2][2] = v2[2];
             
-            redFace[0][2] = v3[0];
+            redFace[2][2] = v3[0];
             redFace[1][2] = v3[1];
-            redFace[2][2] = v3[2];
+            redFace[0][2] = v3[2];
         }
         else{ //counter clockwise
             whiteFace[2][0] = v2[0];
@@ -210,15 +210,15 @@ void Cube::rotateFace(Color face, int dir){
             yellowFace[2][1] = v4[1];
             yellowFace[2][2] = v4[2];
         
-            redFace[0][2] = v1[0];
+            redFace[2][2] = v1[0];
             redFace[1][2] = v1[1];
-            redFace[2][2] = v1[2];
+            redFace[0][2] = v1[2];
         }
     }
     else if(face == orange){
-        v1[0] = whiteFace[0][2];
+        v1[0] = whiteFace[2][2];
         v1[1] = whiteFace[1][2];
-        v1[2] = whiteFace[2][2];
+        v1[2] = whiteFace[0][2];
         
         v2[0] = greenFace[0][0];
         v2[1] = greenFace[1][0];
@@ -228,14 +228,14 @@ void Cube::rotateFace(Color face, int dir){
         v3[1] = yellowFace[1][0];
         v3[2] = yellowFace[2][0];
         
-        v4[0] = blueFace[0][2];
+        v4[0] = blueFace[2][2];
         v4[1] = blueFace[1][2];
-        v4[2] = blueFace[2][2];
+        v4[2] = blueFace[0][2];
         
         if(dir == 0){
-            whiteFace[0][2] = v4[0];
+            whiteFace[2][2] = v4[0];
             whiteFace[1][2] = v4[1];
-            whiteFace[2][2] = v4[2];
+            whiteFace[0][2] = v4[2];
         
             greenFace[0][0] = v1[0];
             greenFace[1][0] = v1[1];
@@ -245,14 +245,14 @@ void Cube::rotateFace(Color face, int dir){
             yellowFace[1][0] = v2[1];
             yellowFace[2][0] = v2[2];
         
-            blueFace[0][2] = v3[0];
+            blueFace[2][2] = v3[0];
             blueFace[1][2] = v3[1];
-            blueFace[2][2] = v3[2];
+            blueFace[0][2] = v3[2];
         }
         else{
-            whiteFace[0][2] = v2[0];
+            whiteFace[2][2] = v2[0];
             whiteFace[1][2] = v2[1];
-            whiteFace[2][2] = v2[2];
+            whiteFace[0][2] = v2[2];
             
             greenFace[0][0] = v3[0];
             greenFace[1][0] = v3[1];
@@ -262,61 +262,61 @@ void Cube::rotateFace(Color face, int dir){
             yellowFace[1][0] = v4[1];
             yellowFace[2][0] = v4[2];
             
-            blueFace[0][2] = v1[0];
+            blueFace[2][2] = v1[0];
             blueFace[1][2] = v1[1];
-            blueFace[2][2] = v1[2];
+            blueFace[0][2] = v1[2];
         }
     }
     else if(face == green){
-        v1[0] = whiteFace[0][0];
+        v1[0] = whiteFace[0][2];
         v1[1] = whiteFace[0][1];
-        v1[2] = whiteFace[0][2];
+        v1[2] = whiteFace[0][0];
         
         v2[0] = redFace[0][0];
         v2[1] = redFace[1][0];
         v2[2] = redFace[2][0];
         
-        v3[0] = yellowFace[0][0];
+        v3[0] = yellowFace[0][2];
         v3[1] = yellowFace[0][1];
-        v3[2] = yellowFace[0][2];
+        v3[2] = yellowFace[0][0];
         
-        v4[0] = orangeFace[0][2];
+        v4[0] = orangeFace[2][2];
         v4[1] = orangeFace[1][2];
-        v4[2] = orangeFace[2][2];
+        v4[2] = orangeFace[0][2];
         
         if(dir == 0){
-            whiteFace[0][0] = v4[0];
+            whiteFace[0][2] = v4[0];
             whiteFace[0][1] = v4[1];
-            whiteFace[0][2] = v4[2];
+            whiteFace[0][0] = v4[2];
         
             redFace[0][0] = v1[0];
             redFace[1][0] = v1[1];
             redFace[2][0] = v1[2];
         
-            yellowFace[0][0] = v2[0];
+            yellowFace[0][2] = v2[0];
             yellowFace[0][1] = v2[1];
-            yellowFace[0][2] = v2[2];
+            yellowFace[0][0] = v2[2];
         
-            orangeFace[0][2] = v3[0];
+            orangeFace[2][2] = v3[0];
             orangeFace[1][2] = v3[1];
-            orangeFace[2][2] = v3[2];
+            orangeFace[0][2] = v3[2];
         }
         else{
-            whiteFace[0][0] = v2[0];
+            whiteFace[0][2] = v2[0];
             whiteFace[0][1] = v2[1];
-            whiteFace[0][2] = v2[2];
+            whiteFace[0][0] = v2[2];
             
             redFace[0][0] = v3[0];
             redFace[1][0] = v3[1];
             redFace[2][0] = v3[2];
             
-            yellowFace[0][0] = v4[0];
+            yellowFace[0][2] = v4[0];
             yellowFace[0][1] = v4[1];
-            yellowFace[0][2] = v4[2];
+            yellowFace[0][0] = v4[2];
             
-            orangeFace[0][2] = v1[0];
+            orangeFace[2][2] = v1[0];
             orangeFace[1][2] = v1[1];
-            orangeFace[2][2] = v1[2];
+            orangeFace[0][2] = v1[2];
         }
     }
     else if(face == red){
@@ -328,13 +328,13 @@ void Cube::rotateFace(Color face, int dir){
         v2[1] = blueFace[1][0];
         v2[2] = blueFace[2][0];
         
-        v3[0] = yellowFace[0][2];
+        v3[0] = yellowFace[2][2];
         v3[1] = yellowFace[1][2];
-        v3[2] = yellowFace[2][2];
+        v3[2] = yellowFace[0][2];
         
-        v4[0] = greenFace[0][2];
+        v4[0] = greenFace[2][2];
         v4[1] = greenFace[1][2];
-        v4[2] = greenFace[2][2];
+        v4[2] = greenFace[0][2];
         
         if(dir == 0){
             whiteFace[0][0] = v4[0];
@@ -345,13 +345,13 @@ void Cube::rotateFace(Color face, int dir){
             blueFace[1][0] = v1[1];
             blueFace[2][0] = v1[2];
         
-            yellowFace[0][2] = v2[0];
+            yellowFace[2][2] = v2[0];
             yellowFace[1][2] = v2[1];
-            yellowFace[2][2] = v2[2];
+            yellowFace[0][2] = v2[2];
         
-            greenFace[0][2] = v3[0];
+            greenFace[2][2] = v3[0];
             greenFace[1][2] = v3[1];
-            greenFace[2][2] = v3[2];
+            greenFace[0][2] = v3[2];
         }
         else{
             whiteFace[0][0] = v2[0];
@@ -362,13 +362,13 @@ void Cube::rotateFace(Color face, int dir){
             blueFace[1][0] = v3[1];
             blueFace[2][0] = v3[2];
             
-            yellowFace[0][2] = v4[0];
+            yellowFace[2][2] = v4[0];
             yellowFace[1][2] = v4[1];
-            yellowFace[2][2] = v4[2];
+            yellowFace[0][2] = v4[2];
             
-            greenFace[0][2] = v1[0];
+            greenFace[2][2] = v1[0];
             greenFace[1][2] = v1[1];
-            greenFace[2][2] = v1[2];
+            greenFace[0][2] = v1[2];
         }
     }
     else if(face == yellow){
@@ -442,6 +442,7 @@ void Cube::rotateFace(Color face, int dir){
     else if(face == yellow){
         cubeFace = yellowFace;
     }
+    
     v1[0] = cubeFace[0][0];
     v1[1] = cubeFace[0][1];
     v1[2] = cubeFace[0][2];
@@ -540,6 +541,73 @@ void Cube::shuffle(){
         }
     }
     cout << "shuffle complete" << endl;
+}
+
+void Cube::printCube(){
+    
+    vector<string> colorTypes = {"W", "B", "O", "G", "R", "Y"};
+    
+    cout << "White" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[whiteFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Blue" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[blueFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Orange" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[orangeFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Green" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[greenFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Red" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[redFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Yellow" << endl;
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << colorTypes[yellowFace[i][j]] << " ";
+        }
+        cout << endl;
+    }
+    cout << "\\" << endl;
+}
+
+void Cube::test(){
+    rotateFace(green, 1); //rotate green counter clockwise
+    printCube();
+    rotateFace(white, 0); //white clockwise
+    printCube();
+    rotateFace(blue, 0); // blue clockwise
+    printCube();
+    rotateFace(green, 0); //green clockwise
+    printCube();
+    rotateFace(white, 1); //white counter
+    printCube();
 }
 
 

@@ -13,12 +13,15 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     Cube rubiks;
-    for(int i = 0; i < 10; ++i){
+    //rubiks.test();
+    //for(int i = 0; i < 10; ++i){
         rubiks.shuffle();
         makeCross(rubiks);
         //daisyTest(rubiks);
         crossTest(rubiks);
+        makeFull(rubiks);
+        fullTest(rubiks);
         cout << endl;
-    }
+    //}
     return 0;
 }
