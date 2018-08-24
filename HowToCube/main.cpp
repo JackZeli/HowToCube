@@ -9,6 +9,8 @@
 #include <iostream>
 #include "Cube.hpp"
 #include "firstLayer.hpp"
+#include "secondLayer.hpp"
+#include "thirdLayer.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -21,6 +23,9 @@ int main(int argc, const char * argv[]) {
         crossTest(rubiks);
         makeFull(rubiks);
         fullTest(rubiks);
+        makeSecondLayer(rubiks);
+        secondLayerTest(rubiks);
+        doThird(rubiks);
         cout << endl;
     //}
     return 0;

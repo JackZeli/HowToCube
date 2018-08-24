@@ -10,6 +10,8 @@
 		E51C804120F96EB60090131C /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E51C803F20F96EB60090131C /* Cube.cpp */; };
 		E52DB1E421176DF20085BA9A /* firstLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E52DB1E221176DF20085BA9A /* firstLayer.cpp */; };
 		E55A90E820F3F405004317FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E55A90E720F3F405004317FF /* main.cpp */; };
+		E56A62CC212F528E00C120BA /* secondLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E56A62CA212F528E00C120BA /* secondLayer.cpp */; };
+		E56A62CF21307D9B00C120BA /* thirdLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E56A62CD21307D9B00C120BA /* thirdLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		E52DB1E321176DF20085BA9A /* firstLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = firstLayer.hpp; sourceTree = "<group>"; };
 		E55A90E420F3F405004317FF /* HowToCube */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HowToCube; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55A90E720F3F405004317FF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E56A62CA212F528E00C120BA /* secondLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = secondLayer.cpp; sourceTree = "<group>"; };
+		E56A62CB212F528E00C120BA /* secondLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = secondLayer.hpp; sourceTree = "<group>"; };
+		E56A62CD21307D9B00C120BA /* thirdLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = thirdLayer.cpp; sourceTree = "<group>"; };
+		E56A62CE21307D9B00C120BA /* thirdLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = thirdLayer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,10 @@
 				E55A90E720F3F405004317FF /* main.cpp */,
 				E51C803F20F96EB60090131C /* Cube.cpp */,
 				E52DB1E221176DF20085BA9A /* firstLayer.cpp */,
+				E56A62CA212F528E00C120BA /* secondLayer.cpp */,
+				E56A62CD21307D9B00C120BA /* thirdLayer.cpp */,
+				E56A62CE21307D9B00C120BA /* thirdLayer.hpp */,
+				E56A62CB212F528E00C120BA /* secondLayer.hpp */,
 				E52DB1E321176DF20085BA9A /* firstLayer.hpp */,
 				E51C804020F96EB60090131C /* Cube.hpp */,
 			);
@@ -129,6 +139,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52DB1E421176DF20085BA9A /* firstLayer.cpp in Sources */,
+				E56A62CC212F528E00C120BA /* secondLayer.cpp in Sources */,
+				E56A62CF21307D9B00C120BA /* thirdLayer.cpp in Sources */,
 				E51C804120F96EB60090131C /* Cube.cpp in Sources */,
 				E55A90E820F3F405004317FF /* main.cpp in Sources */,
 			);

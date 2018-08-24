@@ -378,7 +378,7 @@ void makeFull(Cube &cube){
     Color c1, c2, c3;
    // cube.printCube();
     while(inPlace < 4){
-    // cout << inPlace << " " << b1 << " " << b2 << " " << b3 << " " << b4 << endl;
+   // cout << inPlace << " " << b1 << " " << b2 << " " << b3 << " " << b4 << endl;
         if(b1 == false){
             curCorner = locateCorner(cube, white, blue, orange);
             goalCorner = cube.WBO;
@@ -468,6 +468,20 @@ void makeFull(Cube &cube){
                 cube.rotateFace(c, 0);
                 cube.rotateFace(yellow, 1);
                 cube.rotateFace(c, 1);
+            }
+        }
+        else{
+            if(b1 == false){
+                b1 = true;
+            }
+            else if(b2 == false){
+                b2 = true;
+            }
+            else if(b3 == false){
+                b3 = true;
+            }
+            else if(b4 == false){
+                b4 = true;
             }
         }
     }
