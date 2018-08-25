@@ -28,8 +28,14 @@ void fururf(Cube &cube);
 
 void uldlulld(Cube &cube);
 
+void finalStep(Cube &cube);
+
 void downright(Cube &cube, Color c1);
 
-bool finalMove(Cube &cube);
+Color checkForPattern(Cube &cube);
+
+Color finalMove(Cube &cube);
+
+bool isSolved(Cube &cube);
 
 #endif /* thirdLayer_hpp */
